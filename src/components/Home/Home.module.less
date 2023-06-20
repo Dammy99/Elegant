@@ -1,0 +1,131 @@
+// main: ../../app/style.module.less
+.home {
+  text-align: center;
+  color: white;
+
+  .frame {
+    position: relative;
+    .photo {
+      width: 100%;
+    }
+    .left {
+      position: absolute;
+      bottom: 10%;
+      left: 100px;
+      font-size: 25px;
+      word-wrap: normal;
+      color: #000000;
+    }
+    .centered {
+      position: absolute;
+      top: 40%;
+      left: 20%;
+      transform: translate(-50%, -50%);
+      font-size: 80px;
+      font-family: "Parisienne", cursive;
+    }
+  }
+  .services {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+
+    padding-bottom: 50px;
+    border-bottom: 1px solid black;
+    p {
+      color: #000000;
+    }
+    .bigtext {
+      font-size: 40px;
+      color: black;
+    }
+    .pictures {
+      margin-top: 50px;
+      justify-items: center;
+      display: inline-grid;
+      grid-template-columns: 10vw 10vw 10vw 10vw;
+      grid-column-gap: 10vw;
+      grid-row-gap: 1rem;
+      grid-auto-flow: row;
+      justify-content: center;
+      .circles {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        width: 150px; /* Adjust the width and height as needed */
+        height: 150px;
+        border-radius: 50%; /* Creates the circular shape */
+        overflow: hidden; /* Clips the image within the circular container */
+        border: 2px solid #68a193;
+        transition: 0.5s;
+        img {
+          width: 50%;
+          height: 50%;
+          object-fit: cover;
+        }
+      }
+      .circles:hover {
+        border-color: #6dc3ae;
+        width: 200px;
+        height: 200px;
+        grid-row-gap: 0rem;
+      }
+    }
+  }
+  .carousel {
+    margin: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid black;
+    .bigtext {
+      font-size: 40px;
+      color: black;
+    }
+    .gallery {
+      margin-top: 40px;
+      img {
+        height: 350px;
+      }
+    }
+    div:nth-child(3) {
+      text-align: unset;
+      div {
+        p {
+          border-radius: 30%;
+          background-color: #68a193;
+        }
+      }
+    }
+  }
+  .map {
+    margin-top: 50px;
+    .bigtext {
+      font-size: 40px;
+      color: black;
+    }
+    .location {
+      margin: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .home {
+    .services {
+      .pictures {
+        grid-template-columns: 10vw 10vw;
+        grid-column-gap: 25vw;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .home {
+    .services {
+      .pictures {
+        grid-template-columns: 100%;
+      }
+    }
+  }
+}

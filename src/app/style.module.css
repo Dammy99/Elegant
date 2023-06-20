@@ -1,0 +1,263 @@
+.webtn {
+  width: 20px;
+}
+.container .contacts {
+  padding: 0 50px 0 50px;
+  height: 110px;
+  display: grid;
+  justify-content: space-between;
+  background-color: #ebebeb;
+  grid-template-columns: 1.4fr 1fr 1fr;
+}
+.container .contacts .leftside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container .contacts .leftside .numbers {
+  display: flex;
+  gap: 1.5rem;
+}
+.container .contacts .logo {
+  display: flex;
+  align-items: center;
+}
+.container .contacts .logo .img {
+  height: auto;
+}
+.container .contacts .rightside {
+  display: flex;
+  float: right;
+  justify-content: center;
+  align-items: end;
+  flex-direction: column;
+}
+.container .contacts .rightside p {
+  margin: 0;
+}
+.container .menu {
+  height: 65px;
+}
+.container .menu .links {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.container .menu .links ul {
+  margin: 0;
+  align-self: center;
+  list-style-type: none;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.container .menu .links ul .active a {
+  border-bottom: 0.2rem solid var(--secondary-color);
+}
+.container .menu .links ul li {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+.container .menu .links ul li a {
+  position: relative;
+  color: #5f5f5f;
+  text-decoration: none;
+  display: block;
+}
+.container .menu .links ul li a[aria-current="page"] {
+  color: #68a193;
+}
+.container .menu .links ul li a:before,
+.container .menu .links ul li a:after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 0;
+  background-color: #6dc3ae;
+  transition: 0.5s;
+}
+.container .menu .links ul li a:after {
+  left: 0;
+  bottom: -5px;
+}
+.container .menu .links ul li a:before {
+  right: 0;
+  top: -5px;
+}
+.container .menu .links ul li a:hover {
+  color: #1e1f22;
+}
+.container .menu .links ul li a:hover:after,
+.container .menu .links ul li a:hover:before {
+  width: 100%;
+}
+.home {
+  text-align: center;
+  color: white;
+}
+.home .frame {
+  position: relative;
+}
+.home .frame .photo {
+  width: 100%;
+}
+.home .frame .left {
+  position: absolute;
+  bottom: 10%;
+  left: 100px;
+  font-size: 25px;
+  word-wrap: normal;
+  color: #000000;
+}
+.home .frame .centered {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  font-family: "Parisienne", cursive;
+}
+.home .services {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid black;
+}
+.home .services p {
+  color: #000000;
+}
+.home .services .bigtext {
+  font-size: 40px;
+  color: black;
+}
+.home .services .pictures {
+  margin-top: 50px;
+  justify-items: center;
+  display: inline-grid;
+  grid-template-columns: 10vw 10vw 10vw 10vw;
+  grid-column-gap: 10vw;
+  grid-row-gap: 1rem;
+  grid-auto-flow: row;
+  justify-content: center;
+}
+.home .services .pictures .circles {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 150px;
+  /* Adjust the width and height as needed */
+  height: 150px;
+  border-radius: 50%;
+  /* Creates the circular shape */
+  overflow: hidden;
+  /* Clips the image within the circular container */
+  border: 2px solid #68a193;
+  transition: 0.5s;
+}
+.home .services .pictures .circles img {
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+}
+.home .services .pictures .circles:hover {
+  border-color: #6dc3ae;
+  width: 200px;
+  height: 200px;
+  grid-row-gap: 0rem;
+}
+.home .carousel {
+  margin: 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid black;
+}
+.home .carousel .bigtext {
+  font-size: 40px;
+  color: black;
+}
+.home .carousel .gallery {
+  margin-top: 40px;
+}
+.home .carousel .gallery img {
+  height: 350px;
+}
+.home .carousel div:nth-child(3) {
+  text-align: unset;
+}
+.home .carousel div:nth-child(3) div p {
+  border-radius: 30%;
+  background-color: #68a193;
+}
+.home .map {
+  margin-top: 50px;
+}
+.home .map .bigtext {
+  font-size: 40px;
+  color: black;
+}
+.home .map .location {
+  margin: 50px;
+}
+@media screen and (max-width: 1024px) {
+  .home .services .pictures {
+    grid-template-columns: 10vw 10vw;
+    grid-column-gap: 25vw;
+  }
+}
+@media screen and (max-width: 550px) {
+  .home .services .pictures {
+    grid-template-columns: 100%;
+  }
+}
+.footer {
+  padding: 50px 50px 50px 50px;
+  height: 120px;
+  background-color: #7e7878;
+}
+.footer .contacts {
+  display: flex;
+  align-items: center;
+  gap: 10vw;
+}
+.footer .contacts .leftside {
+  display: flex;
+  flex-direction: column;
+}
+.footer .contacts .rightside {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 1024px) {
+  .footer {
+    padding: 50px 50px 50px 50px;
+    height: 120px;
+    background-color: #7e7878;
+  }
+  .footer .contacts {
+    gap: 5vw;
+  }
+}
+@media screen and (max-width: 550px) {
+  .footer {
+    padding: 50px 50px 3px 50px;
+    background-color: #7e7878;
+    height: auto;
+  }
+  .footer .contacts {
+    align-items: start;
+    flex-direction: column;
+  }
+}
+@font-face {
+  font-family: 'Parisienne';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/parisienne/v13/E21i_d3kivvAkxhLEVZpcy8.ttf) format('truetype');
+}
