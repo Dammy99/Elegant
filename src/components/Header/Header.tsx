@@ -49,6 +49,39 @@ const Header = () => {
           </ul>
         </div>
       </section>
+      <section className={styles.burger}>
+        <input type="checkbox" className={styles.toggler}></input>
+        <div className={styles.hamburger}>
+          <div></div>
+        </div>
+        <div className={styles.overlay}></div>
+        <div className={styles.navmenu}>
+          <div>
+            <ul>
+              <li>
+                <NavLink to="/" data-link-alt="Головна">
+                  <span>Головна</span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/price" data-link-alt="Ціни">
+                  <span>Ціни</span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/about" data-link-alt="Про послуги">
+                  <span>Про послуги</span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/makeup" data-link-alt="Засоби для волосся">
+                  <span>Засоби для волосся</span>
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
