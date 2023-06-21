@@ -96,6 +96,131 @@
 .container .menu .links ul li a:hover:before {
   width: 100%;
 }
+@media screen and (max-width: 1024px) {
+  .container .contacts .leftside {
+    display: none;
+  }
+  .container .contacts .rightside {
+    display: none;
+  }
+  .container .menu {
+    display: none;
+  }
+  .container .burger {
+    align-items: center;
+  }
+  .container .burger .toggler {
+    /* ALWAYS KEEPING THE TOGGLER OR THE CHECKBOX ON TOP OF EVERYTHING :  */
+    z-index: 9;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    top: 25px;
+    right: 20px;
+    cursor: pointer;
+    opacity: 0;
+  }
+  .container .burger .hamburger {
+    border-radius: 30%;
+    background-color: #ebebeb;
+    z-index: 8;
+    position: fixed;
+    top: 25px;
+    right: 20px;
+    height: 35px;
+    width: 35px;
+    padding: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container .burger .hamburger > div {
+    position: relative;
+    top: 0;
+    right: 0;
+    background: #000000;
+    height: 2px;
+    width: 60%;
+    transition: all 0.4s ease;
+  }
+  .container .burger .hamburger > div::before,
+  .container .burger .hamburger > div::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    background: #000000;
+    width: 100%;
+    height: 2px;
+    transition: all 0.4s ease;
+  }
+  .container .burger .hamburger > div::after {
+    top: 10px;
+  }
+  .container .burger .toggler:checked + .hamburger > div {
+    background: rgba(255, 255, 255, 0);
+  }
+  .container .burger .toggler:checked + .hamburger > div::before {
+    top: 0;
+    transform: rotate(45deg);
+    background: #68a193;
+  }
+  .container .burger .toggler:checked + .hamburger > div::after {
+    top: 0;
+    transform: rotate(135deg);
+    background: #68a193;
+  }
+  .container .burger .navmenu {
+    right: 0;
+    background: #ebebeb;
+    width: 0%;
+    height: 100vh;
+    top: 0;
+    position: fixed;
+    z-index: 5;
+    transition: all 0.4s ease;
+  }
+  .container .burger .toggler:checked ~ .navmenu {
+    width: 60%;
+  }
+  .container .burger .overlay {
+    transition: 0.8s;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .container .burger .toggler:checked ~ .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .container .burger .navmenu > div > ul {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    padding-inline-start: 10px;
+    visibility: hidden;
+  }
+  .container .burger .navmenu > div > ul > li {
+    list-style: none;
+    padding: 0.5rem;
+  }
+  .container .burger .navmenu > div > ul > li > a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .container .burger .toggler:checked ~ .navmenu > div > ul {
+    top: 50px;
+    transition: visibility 0.4s ease;
+    transition-delay: 0.2s;
+    visibility: visible;
+  }
+  .container .burger .toggler:checked ~ .navmenu > div > ul > li > a:hover {
+    color: orange;
+  }
+}
 .home {
   text-align: center;
   color: white;
