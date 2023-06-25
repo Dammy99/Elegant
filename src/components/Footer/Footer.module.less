@@ -1,9 +1,11 @@
 // main: ../../app/style.module.less
+@middle-green: #68a193;
+@middle-gray: #7e7878;
 
 .footer {
   padding: 50px 50px 50px 50px;
   height: 120px;
-  background-color: #7e7878;
+  background-color: @middle-gray;
   .contacts {
     display: flex;
     align-items: center;
@@ -11,6 +13,13 @@
     .leftside {
       display: flex;
       flex-direction: column;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      a:hover {
+        color: @middle-green;
+      }
     }
     .rightside {
       display: flex;
@@ -23,7 +32,7 @@
   .footer {
     padding: 50px 50px 50px 50px;
     height: 120px;
-    background-color: #7e7878;
+    background-color: @middle-gray;
     .contacts {
       gap: 5vw;
     }
@@ -33,7 +42,7 @@
 @media screen and (max-width: 550px) {
   .footer {
     padding: 50px 50px 3px 50px;
-    background-color: #7e7878;
+    background-color: @middle-gray;
     height: auto;
     .contacts {
       align-items: start;
