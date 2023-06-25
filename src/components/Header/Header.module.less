@@ -1,12 +1,15 @@
 // main: ../../app/style.module.less
-
+@middle-green: #68a193;
+@light-green: #6dc3ae;
+@black-type: #1e1f22;
+@light-gray: #ebebeb;
 .container {
   .contacts {
     padding: 0 50px 0 50px;
     height: 110px;
     display: grid;
     justify-content: space-between;
-    background-color: #ebebeb;
+    background-color: @light-gray;
     grid-template-columns: 1.4fr 1fr 1fr;
     .leftside {
       display: flex;
@@ -36,6 +39,9 @@
     }
   }
   .menu {
+    align-items: center;
+    display: flex;
+    justify-content: center;
     height: 65px;
     .links {
       height: 100%;
@@ -64,7 +70,7 @@
           text-transform: uppercase;
           a {
             &[aria-current="page"] {
-              color: #68a193;
+              color: @middle-green;
             }
             position: relative;
             color: rgb(95, 95, 95);
@@ -76,7 +82,7 @@
               position: absolute;
               height: 4px;
               width: 0;
-              background-color: #6dc3ae;
+              background-color: @light-green;
               transition: 0.5s;
             }
             &:after {
@@ -88,7 +94,7 @@
               top: -5px;
             }
             &:hover {
-              color: #1e1f22;
+              color: @black-type;
             }
             &:hover:after,
             &:hover:before {
@@ -98,6 +104,9 @@
         }
       }
     }
+  }
+  .burger {
+    display: none;
   }
 }
 
@@ -114,25 +123,92 @@
     .menu {
       display: none;
     }
+
+    .overlay {
+      height: 100%;
+      width: 100%;
+      top: 0;
+      z-index: 1;
+      transition: 0.2s ease;
+    }
+
+    .burger:has(.active) {
+      width: 100%;
+    }
+
+    .burger:has(.active) ~ .overlay {
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+    }
+
     .burger {
-      // display: block;
-      align-items: center;
-      .toggler {
-        /* ALWAYS KEEPING THE TOGGLER OR THE CHECKBOX ON TOP OF EVERYTHING :  */
-        z-index: 9;
-        height: 50px;
-        width: 50px;
-        position: fixed;
-        top: 25px;
-        right: 20px;
-        cursor: pointer;
-        opacity: 0;
+      z-index: 2;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 0%;
+      height: 100%;
+      display: flex;
+      transition: 0.4s ease;
+
+      .navigation {
+        padding-top: 55px;
+        right: 0;
+        background: @light-gray;
+        width: 0;
+        height: 100%;
+        top: 0;
+        z-index: 5;
+        position: absolute;
+        transition: all 0.4s ease;
+        transform: translateX(0%);
+        > div > ul > li > a {
+          color: black;
+          text-decoration: none;
+          font-size: 1.1rem;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        > div > ul {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          position: fixed;
+          padding-inline-start: 10px;
+          text-decoration: none;
+        }
+
+        > div > ul > li {
+          list-style: none;
+          padding: 0.5rem;
+        }
+
+        div {
+          ul {
+            transition: visibility 10s ease;
+            transition-delay: 10s;
+            li {
+              a {
+                &[aria-current="page"] {
+                  color: @middle-green;
+                }
+                span {
+                  font-size: 10;
+                  font-family: "Kaisei Opti";
+                }
+              }
+            }
+          }
+        }
       }
 
-      .hamburger {
+      .cross {
+        cursor: pointer;
         border-radius: 30%;
-        background-color: #ebebeb;
-        z-index: 8;
+        background-color: @light-gray;
+        z-index: 10;
         position: fixed;
         top: 25px;
         right: 20px;
@@ -142,122 +218,84 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        > div {
+          position: relative;
+          top: 0;
+          right: 0;
+          background: rgb(0, 0, 0);
+          height: 2px;
+          width: 60%;
+          transition: all 0.4s ease;
+        }
+
+        > div::before,
+        > div::after {
+          content: "";
+          position: absolute;
+          top: -10px;
+          background: rgb(0, 0, 0);
+          width: 100%;
+          height: 2px;
+          transition: all 0.4s ease;
+        }
+
+        > div::after {
+          top: 10px;
+        }
       }
 
-      .hamburger > div {
-        position: relative;
-        top: 0;
-        right: 0;
-        background: rgb(0, 0, 0);
-        height: 2px;
-        width: 60%;
-        transition: all 0.4s ease;
-      }
-
-      .hamburger > div::before,
-      .hamburger > div::after {
+      .active {
         content: "";
-        position: absolute;
-        top: -10px;
-        background: rgb(0, 0, 0);
-        width: 100%;
-        height: 2px;
-        transition: all 0.4s ease;
-      }
-
-      .hamburger > div::after {
-        top: 10px;
-      }
-
-      .toggler:checked + .hamburger > div {
-        background: rgba(255, 255, 255, 0);
-      }
-
-      .toggler:checked + .hamburger > div::before {
-        top: 0;
-        transform: rotate(45deg);
-        background: #68a193;
-      }
-
-      .toggler:checked + .hamburger > div::after {
-        top: 0;
-        transform: rotate(135deg);
-        background: #68a193;
-      }
-
-      // /* MAIN MENU WITH THE WHITE BACKGROUND AND THE TEXT :  */
-
-      .navmenu {
-        right: 0;
-        background: #ebebeb;
-        width: 0%;
-        height: 100vh;
-        top: 0;
-        position: fixed;
-        z-index: 5;
-        transition: all 0.4s ease;
-      }
-
-      .toggler:checked ~ .navmenu {
+        z-index: 10;
         width: 60%;
+        transition: all 0.4s ease;
+        .navlinks {
+          flex-direction: column;
+          ul {
+            li {
+              a:hover {
+                color: rgb(99, 202, 185);
+              }
+            }
+          }
+        }
       }
 
-      .overlay {
-        transition: 0.8s;
-        z-index: 1;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0);
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
 
-      .toggler:checked ~ .overlay {
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-
-      .navmenu > div > ul {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        padding-inline-start: 10px;
-        visibility: hidden;
-      }
-
-      .navmenu > div > ul > li {
-        list-style: none;
-        padding: 0.5rem;
-      }
-
-      .navmenu > div > ul > li > a {
-        color: black;
-        text-decoration: none;
-        font-size: 1.1rem;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      .toggler:checked ~ .navmenu > div > ul {
+      .active > div > ul {
         top: 50px;
-        transition: visibility 0.4s ease;
-        transition-delay: 0.2s;
-        visibility: visible;
+        animation-fill-mode: forwards;
+        transition: visibility 0.2s ease;
+        transition-delay: 0.4s;
+        animation-delay: 1s;
+        animation: fadein 1s;
       }
 
-      .toggler:checked ~ .navmenu > div > ul > li > a:hover {
-        color: orange;
+      .active ~ .cross {
+        > div {
+          background: rgba(255, 255, 255, 0);
+        }
+
+        > div::before {
+          top: 0;
+          transform: rotate(45deg);
+          background: @middle-green;
+        }
+
+        > div::after {
+          top: 0;
+          transform: rotate(135deg);
+          background: @middle-green;
+        }
       }
     }
   }
 }
-
-// @media screen and (max-width: 550px) {
-//   .footer {
-//     padding: 50px 50px 3px 50px;
-//     background-color: #7e7878;
-//     height: auto;
-//     .contacts {
-//       align-items: start;
-//       flex-direction: column;
-//     }
-//   }
-// }

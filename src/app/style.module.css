@@ -36,6 +36,9 @@
   margin: 0;
 }
 .container .menu {
+  align-items: center;
+  display: flex;
+  justify-content: center;
   height: 65px;
 }
 .container .menu .links {
@@ -96,6 +99,9 @@
 .container .menu .links ul li a:hover:before {
   width: 100%;
 }
+.container .burger {
+  display: none;
+}
 @media screen and (max-width: 1024px) {
   .container .contacts .leftside {
     display: none;
@@ -106,24 +112,78 @@
   .container .menu {
     display: none;
   }
-  .container .burger {
-    align-items: center;
+  .container .overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    transition: 0.2s ease;
   }
-  .container .burger .toggler {
-    /* ALWAYS KEEPING THE TOGGLER OR THE CHECKBOX ON TOP OF EVERYTHING :  */
-    z-index: 9;
-    height: 50px;
-    width: 50px;
+  .container .burger:has(.active) {
+    width: 100%;
+  }
+  .container .burger:has(.active) ~ .overlay {
     position: fixed;
-    top: 25px;
-    right: 20px;
-    cursor: pointer;
-    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
   }
-  .container .burger .hamburger {
+  .container .burger {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0%;
+    height: 100%;
+    display: flex;
+    transition: 0.4s ease;
+  }
+  .container .burger .navigation {
+    padding-top: 55px;
+    right: 0;
+    background: #ebebeb;
+    width: 0;
+    height: 100%;
+    top: 0;
+    z-index: 5;
+    position: absolute;
+    transition: all 0.4s ease;
+    transform: translateX(0%);
+  }
+  .container .burger .navigation > div > ul > li > a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .container .burger .navigation > div > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    padding-inline-start: 10px;
+    text-decoration: none;
+  }
+  .container .burger .navigation > div > ul > li {
+    list-style: none;
+    padding: 0.5rem;
+  }
+  .container .burger .navigation div ul {
+    transition: visibility 10s ease;
+    transition-delay: 10s;
+  }
+  .container .burger .navigation div ul li a[aria-current="page"] {
+    color: #68a193;
+  }
+  .container .burger .navigation div ul li a span {
+    font-size: 10;
+    font-family: "Kaisei Opti";
+  }
+  .container .burger .cross {
+    cursor: pointer;
     border-radius: 30%;
     background-color: #ebebeb;
-    z-index: 8;
+    z-index: 10;
     position: fixed;
     top: 25px;
     right: 20px;
@@ -134,7 +194,7 @@
     align-items: center;
     justify-content: center;
   }
-  .container .burger .hamburger > div {
+  .container .burger .cross > div {
     position: relative;
     top: 0;
     right: 0;
@@ -143,8 +203,8 @@
     width: 60%;
     transition: all 0.4s ease;
   }
-  .container .burger .hamburger > div::before,
-  .container .burger .hamburger > div::after {
+  .container .burger .cross > div::before,
+  .container .burger .cross > div::after {
     content: "";
     position: absolute;
     top: -10px;
@@ -153,72 +213,49 @@
     height: 2px;
     transition: all 0.4s ease;
   }
-  .container .burger .hamburger > div::after {
+  .container .burger .cross > div::after {
     top: 10px;
   }
-  .container .burger .toggler:checked + .hamburger > div {
+  .container .burger .active {
+    content: "";
+    z-index: 10;
+    width: 60%;
+    transition: all 0.4s ease;
+  }
+  .container .burger .active .navlinks {
+    flex-direction: column;
+  }
+  .container .burger .active .navlinks ul li a:hover {
+    color: #63cab9;
+  }
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .container .burger .active > div > ul {
+    top: 50px;
+    animation-fill-mode: forwards;
+    transition: visibility 0.2s ease;
+    transition-delay: 0.4s;
+    animation-delay: 1s;
+    animation: fadein 1s;
+  }
+  .container .burger .active ~ .cross > div {
     background: rgba(255, 255, 255, 0);
   }
-  .container .burger .toggler:checked + .hamburger > div::before {
+  .container .burger .active ~ .cross > div::before {
     top: 0;
     transform: rotate(45deg);
     background: #68a193;
   }
-  .container .burger .toggler:checked + .hamburger > div::after {
+  .container .burger .active ~ .cross > div::after {
     top: 0;
     transform: rotate(135deg);
     background: #68a193;
-  }
-  .container .burger .navmenu {
-    right: 0;
-    background: #ebebeb;
-    width: 0%;
-    height: 100vh;
-    top: 0;
-    position: fixed;
-    z-index: 5;
-    transition: all 0.4s ease;
-  }
-  .container .burger .toggler:checked ~ .navmenu {
-    width: 60%;
-  }
-  .container .burger .overlay {
-    transition: 0.8s;
-    z-index: 1;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0);
-  }
-  .container .burger .toggler:checked ~ .overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  .container .burger .navmenu > div > ul {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    padding-inline-start: 10px;
-    visibility: hidden;
-  }
-  .container .burger .navmenu > div > ul > li {
-    list-style: none;
-    padding: 0.5rem;
-  }
-  .container .burger .navmenu > div > ul > li > a {
-    color: black;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  }
-  .container .burger .toggler:checked ~ .navmenu > div > ul {
-    top: 50px;
-    transition: visibility 0.4s ease;
-    transition-delay: 0.2s;
-    visibility: visible;
-  }
-  .container .burger .toggler:checked ~ .navmenu > div > ul > li > a:hover {
-    color: orange;
   }
 }
 .home {
@@ -277,12 +314,9 @@
   flex-direction: column;
   justify-content: center;
   width: 150px;
-  /* Adjust the width and height as needed */
   height: 150px;
   border-radius: 50%;
-  /* Creates the circular shape */
   overflow: hidden;
-  /* Clips the image within the circular container */
   border: 2px solid #68a193;
   transition: 0.5s;
 }
@@ -312,12 +346,36 @@
 .home .carousel .gallery img {
   height: 350px;
 }
+.home .carousel div:nth-child(4) div {
+  height: 35px;
+}
+.home .carousel div:nth-child(4) div p {
+  width: 35px;
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 40%;
+  height: 100%;
+  border: 1px solid;
+  border-color: #68a193;
+  opacity: 0.7;
+}
 .home .carousel div:nth-child(3) {
   text-align: unset;
 }
+.home .carousel div:nth-child(3) div {
+  height: 35px;
+}
 .home .carousel div:nth-child(3) div p {
-  border-radius: 30%;
-  background-color: #68a193;
+  width: 35px;
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 40%;
+  height: 100%;
+  border: 1px solid;
+  border-color: #68a193;
+  opacity: 0.7;
 }
 .home .map {
   margin-top: 50px;
@@ -354,6 +412,13 @@
   display: flex;
   flex-direction: column;
 }
+.footer .contacts .leftside a {
+  color: white;
+  text-decoration: none;
+}
+.footer .contacts .leftside a:hover {
+  color: #68a193;
+}
 .footer .contacts .rightside {
   display: flex;
   flex-direction: column;
@@ -379,10 +444,20 @@
     flex-direction: column;
   }
 }
+.services {
+  height: 100px;
+}
 @font-face {
   font-family: 'Parisienne';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/parisienne/v13/E21i_d3kivvAkxhLEVZpcy8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Kaisei Opti';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/kaiseiopti/v8/QldKNThJphYb8_g6c2nlIFle.ttf) format('truetype');
 }

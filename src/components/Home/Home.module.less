@@ -1,4 +1,6 @@
 // main: ../../app/style.module.less
+@middle-green: #68a193;
+@light-green: #6dc3ae;
 .home {
   text-align: center;
   color: white;
@@ -53,11 +55,11 @@
         align-items: center;
         flex-direction: column;
         justify-content: center;
-        width: 150px; /* Adjust the width and height as needed */
+        width: 150px;
         height: 150px;
-        border-radius: 50%; /* Creates the circular shape */
-        overflow: hidden; /* Clips the image within the circular container */
-        border: 2px solid #68a193;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid @middle-green;
         transition: 0.5s;
         img {
           width: 50%;
@@ -66,7 +68,7 @@
         }
       }
       .circles:hover {
-        border-color: #6dc3ae;
+        border-color: @light-green;
         width: 200px;
         height: 200px;
         grid-row-gap: 0rem;
@@ -87,12 +89,36 @@
         height: 350px;
       }
     }
+    div:nth-child(4) {
+      div {
+        height: 35px;
+        p {
+          width: 35px;
+          justify-content: center;
+          display: inline-flex;
+          align-items: center;
+          border-radius: 40%;
+          height: 100%;
+          border: 1px solid;
+          border-color: @middle-green;
+          opacity: 0.7;
+        }
+      }
+    }
     div:nth-child(3) {
       text-align: unset;
       div {
+        height: 35px;
         p {
-          border-radius: 30%;
-          background-color: #68a193;
+          width: 35px;
+          justify-content: center;
+          display: inline-flex;
+          align-items: center;
+          border-radius: 40%;
+          height: 100%;
+          border: 1px solid;
+          border-color: @middle-green;
+          opacity: 0.7;
         }
       }
     }
