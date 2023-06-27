@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../../app/style.module.css";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { IconButton } from "@mui/material";
-const Header = () => {
+const Footer = () => {
   return (
     <div className={styles.footer}>
       <section className={styles.contacts}>
@@ -37,4 +37,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Footer;
