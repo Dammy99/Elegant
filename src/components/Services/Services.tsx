@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../app/style.module.css";
-const Header = () => {
+const Services = () => {
   return (
     <div className={styles.servicespage}>
       <div className={styles.servicespage__hairbox}>
@@ -37,4 +37,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Services;

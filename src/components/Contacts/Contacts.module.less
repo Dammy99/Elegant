@@ -1,0 +1,78 @@
+// main: ../../app/style.module.less
+@middle-green: #68a193;
+@middle-gray: #7e7878;
+
+.contactspage {
+  padding: 50px 50px 50px 50px;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  &__info {
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
+    row-gap: 40px;
+    column-gap: 10px;
+  }
+  &__contacts {
+    b {
+      font-family: "Kaisei Opti";
+      font-size: 20px;
+    }
+    a {
+      color: #68a193;
+      text-decoration: none;
+    }
+    a:hover {
+      color: black;
+    }
+    font-family: "Alegreya SC";
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    gap: 10px;
+  }
+  &__numbers {
+    b {
+      font-family: "Kaisei Opti";
+      font-size: 20px;
+      // font-size: 22px;
+    }
+    font-family: "Alegreya SC";
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    gap: 10px;
+  }
+  &__schedule {
+    b {
+      font-family: "Kaisei Opti";
+      font-size: 20px;
+      // font-size: 22px;
+    }
+    font-family: "Alegreya SC";
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    gap: 10px;
+  }
+
+  &__map {
+  }
+}
+
+@media screen and (max-width: 1175px) {
+  .contactspage {
+    grid-template-columns: 0.6fr 1fr;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .contactspage {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .contactspage {
+    padding: 50px 20px 50px 20px;
+  }
+}

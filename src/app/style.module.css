@@ -10,11 +10,13 @@
   grid-template-columns: 1.4fr 1fr 1fr;
 }
 .container .contacts .leftside {
+  font-family: Alice;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .container .contacts .leftside .numbers {
+  font-size: 17px;
   display: flex;
   gap: 1.5rem;
 }
@@ -31,6 +33,7 @@
   justify-content: center;
   align-items: end;
   flex-direction: column;
+  font-family: Alice;
 }
 .container .contacts .rightside p {
   margin: 0;
@@ -258,6 +261,19 @@
     background: #68a193;
   }
 }
+@media screen and (max-width: 371px) {
+  .container .contacts {
+    padding: 0 10px 0 0;
+  }
+}
+@media screen and (max-width: 550px) {
+  .container .burger .cross > div {
+    width: 60%;
+  }
+  .container .burger .active {
+    width: 85%;
+  }
+}
 .home {
   text-align: center;
   color: white;
@@ -468,7 +484,7 @@
   height: 434px;
   object-fit: cover;
   object-position: 40% 20%;
-  opacity: 0.63;
+  opacity: 0.73;
 }
 .servicespage__hairbox_flip {
   transform: scaleX(-1);
@@ -519,7 +535,7 @@
     height: 434px;
     object-fit: cover;
     object-position: 40% 20%;
-    opacity: 0.63;
+    opacity: 0.73;
   }
 }
 @media screen and (max-width: 550px) {
@@ -531,7 +547,73 @@
     height: 434px;
     object-fit: cover;
     object-position: 40% 20%;
-    opacity: 0.63;
+    opacity: 0.73;
+  }
+}
+.contactspage {
+  padding: 50px 50px 50px 50px;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+}
+.contactspage__info {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr;
+  row-gap: 40px;
+  column-gap: 10px;
+}
+.contactspage__contacts {
+  font-family: "Alegreya SC";
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  gap: 10px;
+}
+.contactspage__contacts b {
+  font-family: "Kaisei Opti";
+  font-size: 20px;
+}
+.contactspage__contacts a {
+  color: #68a193;
+  text-decoration: none;
+}
+.contactspage__contacts a:hover {
+  color: black;
+}
+.contactspage__numbers {
+  font-family: "Alegreya SC";
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  gap: 10px;
+}
+.contactspage__numbers b {
+  font-family: "Kaisei Opti";
+  font-size: 20px;
+}
+.contactspage__schedule {
+  font-family: "Alegreya SC";
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  gap: 10px;
+}
+.contactspage__schedule b {
+  font-family: "Kaisei Opti";
+  font-size: 20px;
+}
+@media screen and (max-width: 1175px) {
+  .contactspage {
+    grid-template-columns: 0.6fr 1fr;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .contactspage {
+    display: block;
+  }
+}
+@media screen and (max-width: 550px) {
+  .contactspage {
+    padding: 50px 20px 50px 20px;
   }
 }
 @font-face {
@@ -554,4 +636,11 @@
   font-weight: 400;
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/alegreyasc/v25/taiOGmRtCJ62-O0HhNEa-a6o.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Alice';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/alice/v20/OpNCnoEEmtHa6FcJ.ttf) format('truetype');
 }
