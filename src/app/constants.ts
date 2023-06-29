@@ -1,5 +1,60 @@
 import { ServicesData, TableData } from "../components/Table/Table";
 
+interface Circles {
+  navigation: string;
+  src: string;
+  alt: string;
+}
+
+interface CirclesArray {
+  data: Circles[];
+}
+
+export const circlesData: CirclesArray = {
+  data: [
+    {
+      navigation: "/price/hairdressingService?current=Стрижки",
+      src: "../../../public/haircutting.png",
+      alt: "Стрижки",
+    },
+    {
+      navigation: "/price/hairdressingService?current=Фарбування",
+      src: "../../../public/haircutting.png",
+      alt: "Фарбування",
+    },
+    {
+      navigation: "/price/hairdressingService?current=Стрижки",
+      src: "../../../public/haircutting.png",
+      alt: "Haircutting",
+    },
+    {
+      navigation: "/price/hairdressingService?current=Стрижки",
+      src: "../../../public/haircutting.png",
+      alt: "Haircutting",
+    },
+    {
+      navigation: "/price/hairdressingService?current=Стрижки",
+      src: "../../../public/haircutting.png",
+      alt: "Haircutting",
+    },
+    {
+      navigation: "/price/hairdressingService?current=Стрижки",
+      src: "../../../public/haircutting.png",
+      alt: "Haircutting",
+    },
+    {
+      navigation: "/price/hairdressingService?current=Стрижки",
+      src: "../../../public/haircutting.png",
+      alt: "Haircutting",
+    },
+    {
+      navigation: "/price/hairdressingService?current=Стрижки",
+      src: "../../../public/haircutting.png",
+      alt: "Haircutting",
+    },
+  ],
+};
+
 const parsedServices: ServicesData[] = [
   { name: "Service 1", price: "100" },
   { name: "Service 2", price: "200" },

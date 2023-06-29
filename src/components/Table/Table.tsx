@@ -16,7 +16,7 @@ export interface ServicesData {
 
 const Table = (tableData: TableData) => {
   return (
-    <section className={styles.eletable}>
+    <section id={tableData.tableName} className={styles.eletable}>
       <h2>{tableData.tableName}</h2>
       <table className={styles.eletable__table}>
         <thead>

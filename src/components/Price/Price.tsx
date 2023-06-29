@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../../app/style.module.css";
 import Table, { ServicesData, TableData } from "../Table/Table";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams, useLocation } from "react-router-dom";
 import {
   eyebrowsAndEyelashes,
   hairdressingServices,
@@ -18,6 +18,20 @@ const p: TableData = { data: parsedServices, tableName: "qwe" };
 
 const Price = (data: TableData[]) => {
   const { pricesPage } = useParams();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  console.log(searchParams.get("current"));
+  const activeItem = searchParams.get("current");
+  useEffect(() => {
+    if (activeItem) {
+      window.scrollTo(0, 0);
+      const element = document.getElementById(activeItem);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [activeItem]);
+
   return (
     <div className={styles.pricePage}>
       <section className={styles.background}></section>
