@@ -1,14 +1,22 @@
 // main: ../../app/style.module.less
 @middle-green: #68a193;
 @middle-gray: #7e7878;
+@light-green: #6dc3ae;
 
 .eletable {
+  border-radius: 50%;
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   &__table {
-    width: 100%;
+    text-align: left;
+    width: 80%;
     border-collapse: collapse;
+  }
+
+  &__table thead th {
+    background-color: @light-green !important;
   }
 
   &__table th,
@@ -25,18 +33,27 @@
   &__table tbody tr:nth-child(even) {
     background-color: #f9f9f9;
   }
+  &__table td:nth-child(1) {
+    max-width: 80%;
+    width: 100%;
+  }
 }
 
-// @media screen and (max-width: 1024px) {
-//   .footer {
-//     padding: 50px 50px 50px 50px;
-//     height: 120px;
-//     background-color: @middle-gray;
-//     .contacts {
-//       gap: 5vw;
-//     }
-//   }
-// }
+@media screen and (max-width: 1024px) {
+  .eletable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__table {
+      text-align: left;
+      width: 100%;
+      border-collapse: collapse;
+    }
+    &__table td:nth-child(1) {
+      max-width: 70%;
+    }
+  }
+}
 
 // @media screen and (max-width: 550px) {
 //   .footer {
