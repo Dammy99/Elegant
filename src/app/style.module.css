@@ -616,6 +616,112 @@
     padding: 50px 20px 50px 20px;
   }
 }
+.eletable {
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.eletable__table {
+  text-align: left;
+  width: 80%;
+  border-collapse: collapse;
+}
+.eletable__table thead th {
+  background-color: #6dc3ae !important;
+}
+.eletable__table th,
+.eletable__table td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+.eletable__table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+.eletable__table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.eletable__table td:nth-child(1) {
+  max-width: 80%;
+  width: 100%;
+}
+@media screen and (max-width: 1024px) {
+  .eletable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .eletable__table {
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .eletable__table td:nth-child(1) {
+    max-width: 70%;
+  }
+}
+.pricePage .background {
+  background-image: url(../../../background_hair.png);
+  background-size: cover;
+  filter: blur(10px);
+  position: absolute;
+  height: 100%;
+  width: -webkit-fill-available;
+  max-height: 100vh;
+  z-index: -1;
+  padding: 50px;
+  opacity: 0.5;
+}
+.pricePage .price {
+  padding: 50px 100px 50px 100px;
+}
+.pricePage .price .list {
+  display: flex;
+  justify-content: center;
+  gap: 5vw;
+  padding-bottom: 40px;
+  color: white;
+}
+.pricePage .price .list span {
+  font-size: 20px;
+}
+.pricePage .price .list a {
+  align-self: center;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+.pricePage .price .list a:hover {
+  color: #68a193;
+}
+.pricePage .price .tables {
+  padding-bottom: 50px;
+  background-color: white;
+}
+@media screen and (max-width: 1024px) {
+  .pricePage .background {
+    display: none;
+  }
+  .pricePage .price {
+    padding: 50px;
+  }
+  .pricePage .price .list {
+    color: black;
+  }
+  .pricePage .price .list a {
+    color: black;
+  }
+}
+@media screen and (max-width: 550px) {
+  .pricePage .background {
+    display: none;
+  }
+  .pricePage .price {
+    padding: 50px 5px 50px 5px;
+  }
+}
 @font-face {
   font-family: 'Parisienne';
   font-style: normal;

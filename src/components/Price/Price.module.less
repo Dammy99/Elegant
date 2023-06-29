@@ -1,0 +1,72 @@
+// main: ../../app/style.module.less
+@middle-green: #68a193;
+@middle-gray: #7e7878;
+@body-gray: #9c9c9c52;
+.pricePage {
+  .background {
+    background-image: url(../../../background_hair.png);
+    background-size: cover;
+    filter: blur(10px);
+    position: absolute;
+    height: 100%;
+    width: -webkit-fill-available;
+    max-height: 100vh;
+    z-index: -1;
+    padding: 50px;
+    opacity: 0.5;
+  }
+  .price {
+    padding: 50px 100px 50px 100px;
+    .list {
+      display: flex;
+      justify-content: center;
+      gap: 5vw;
+      padding-bottom: 40px;
+      color: white;
+      span {
+        font-size: 20px;
+      }
+      a {
+        align-self: center;
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+      }
+      a:hover {
+        color: #68a193;
+      }
+    }
+    .tables {
+      padding-bottom: 50px;
+      background-color: white;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .pricePage {
+    .background {
+      display: none;
+    }
+    .price {
+      padding: 50px;
+      .list {
+        color: black;
+        a {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .pricePage {
+    .background {
+      display: none;
+    }
+    .price {
+      padding: 50px 5px 50px 5px;
+    }
+  }
+}

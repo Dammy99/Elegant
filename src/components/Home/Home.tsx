@@ -5,6 +5,8 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { Map, Marker, ZoomControl } from "pigeon-maps";
 import { maptiler } from "pigeon-maps/providers";
+import { NavLink } from "react-router-dom";
+import { circlesData } from "../../app/constants";
 const maptilerProvider = maptiler("TWkPts1owmC3BkPZMqZz", "streets");
 
 export function GetLocation() {
@@ -95,6 +97,7 @@ const items = [
 ];
 
 const Home = () => {
+  window.scrollTo(0, 0);
   return (
     <>
       <section className={styles.home}>
@@ -111,54 +114,18 @@ const Home = () => {
         <section className={styles.services}>
           <span className={styles.bigtext}>-Наші послуги-</span>
           <section className={styles.pictures}>
-            <div className={styles.field}>
-              <div className={styles.circles}>
-                <img src="../../../public/haircutting.png" alt="haircutting" />
-              </div>
-              <p>Haircutting</p>
-            </div>
-            <div className={styles.field}>
-              <div className={styles.circles}>
-                <img src="../../../public/haircutting.png" alt="haircutting" />
-              </div>
-              <p>Haircutting</p>
-            </div>
-            <div className={styles.field}>
-              <div className={styles.circles}>
-                <img src="../../../public/haircutting.png" alt="haircutting" />
-              </div>
-              <p>Haircutting</p>
-            </div>
-            <div className={styles.field}>
-              <div className={styles.circles}>
-                <img src="../../../public/haircutting.png" alt="haircutting" />
-              </div>
-              <p>Haircutting</p>
-            </div>
-            <div className={styles.field}>
-              <div className={styles.circles}>
-                <img src="../../../public/haircutting.png" alt="haircutting" />
-              </div>
-              <p>Haircutting</p>
-            </div>
-            <div className={styles.field}>
-              <div className={styles.circles}>
-                <img src="../../../public/haircutting.png" alt="haircutting" />
-              </div>
-              <p>Haircutting</p>
-            </div>
-            <div className={styles.field}>
-              <div className={styles.circles}>
-                <img src="../../../public/haircutting.png" alt="haircutting" />
-              </div>
-              <p>Haircutting</p>
-            </div>
-            <div className={styles.field}>
-              <div className={styles.circles}>
-                <img src="../../../public/haircutting.png" alt="haircutting" />
-              </div>
-              <p>Haircutting</p>
-            </div>
+            {circlesData.data.map((circle) => {
+              return (
+                <div className={styles.field}>
+                  <NavLink to={circle.navigation}>
+                    <div className={styles.circles}>
+                      <img src={circle.src} alt={circle.alt} />
+                    </div>
+                  </NavLink>
+                  <p>{circle.alt}</p>
+                </div>
+              );
+            })}
           </section>
         </section>
         <section className={styles.carousel}>
