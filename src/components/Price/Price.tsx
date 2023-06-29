@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "../../app/style.module.css";
-import Table, { ServicesData, TableData } from "../Table/Table";
+import Table, { TableData } from "../Table/Table";
 import { NavLink, useParams, useLocation } from "react-router-dom";
 import {
   eyebrowsAndEyelashes,
@@ -8,23 +8,14 @@ import {
   manicureService,
 } from "../../app/constants";
 
-const parsedServices: ServicesData[] = [
-  { name: "Service 1", price: "100" },
-  { name: "Service 2", price: "200" },
-  { name: "Service 3", price: "300" },
-];
-
-const p: TableData = { data: parsedServices, tableName: "qwe" };
-
-const Price = (data: TableData[]) => {
+const Price = () => {
+  window.scrollTo(0, 0);
   const { pricesPage } = useParams();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  console.log(searchParams.get("current"));
   const activeItem = searchParams.get("current");
   useEffect(() => {
     if (activeItem) {
-      window.scrollTo(0, 0);
       const element = document.getElementById(activeItem);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
@@ -65,7 +56,6 @@ const Price = (data: TableData[]) => {
             eyebrowsAndEyelashes.map((x: TableData) => {
               return <Table key={x.tableName} {...x}></Table>;
             })}
-          {/* <Table {...p}></Table> */}
         </section>
       </section>
     </div>
