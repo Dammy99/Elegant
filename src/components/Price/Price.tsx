@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../../app/style.module.css";
 import Table, { ServicesData, TableData } from "../Table/Table";
 import { useParams } from "react-router-dom";
-
+import { hairdressingServices } from "../../app/constants";
 const parsedServices: ServicesData[] = [
   { name: "Service 1", price: "100" },
   { name: "Service 2", price: "200" },
@@ -16,9 +16,12 @@ const Price = (data: TableData[]) => {
   return (
     <section className={styles.price}>
       {pricesPage}
-      <button></button>
       <section className={styles.list}>LIST</section>
       <section className={styles.tables}>
+        {pricesPage == "hairdressingServices" &&
+          hairdressingServices.map((x: TableData) => {
+            return <Table {...x}></Table>;
+          })}
         <Table {...p}></Table>
       </section>
     </section>

@@ -10,10 +10,10 @@ export interface ServicesData {
   name: string;
   price: string;
 }
-const Table = (servicesData: TableData) => {
+const Table = (tableData: TableData) => {
   return (
     <section className={styles.eletable}>
-      <h2>{servicesData.tableName}</h2>
+      <h2>{tableData.tableName}</h2>
       <table className={styles.eletable__table}>
         <thead>
           <tr>
@@ -22,7 +22,7 @@ const Table = (servicesData: TableData) => {
           </tr>
         </thead>
         <tbody>
-          {servicesData.data.map((x: ServicesData) => {
+          {tableData.data.map((x: ServicesData) => {
             return (
               <tr key={x.name}>
                 <td>{x.name}</td>
