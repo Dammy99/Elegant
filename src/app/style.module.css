@@ -616,6 +616,33 @@
     padding: 50px 20px 50px 20px;
   }
 }
+.eletable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.eletable__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.eletable__table th,
+.eletable__table td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+.eletable__table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+.eletable__table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.price {
+  background-color: rgba(247, 246, 246, 0.37);
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+}
 @font-face {
   font-family: 'Parisienne';
   font-style: normal;

@@ -1,0 +1,51 @@
+// main: ../../app/style.module.less
+@middle-green: #68a193;
+@middle-gray: #7e7878;
+
+.eletable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  &__table th,
+  &__table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  &__table th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+
+  &__table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+}
+
+// @media screen and (max-width: 1024px) {
+//   .footer {
+//     padding: 50px 50px 50px 50px;
+//     height: 120px;
+//     background-color: @middle-gray;
+//     .contacts {
+//       gap: 5vw;
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 550px) {
+//   .footer {
+//     padding: 50px 50px 3px 50px;
+//     background-color: @middle-gray;
+//     height: auto;
+//     .contacts {
+//       align-items: start;
+//       flex-direction: column;
+//     }
+//   }
+// }
