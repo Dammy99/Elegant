@@ -1,0 +1,98 @@
+USE ElegantDb
+GO
+
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Employee' )
+BEGIN
+    CREATE TABLE Employee
+    (
+		Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+        FirstName NVARCHAR(100) NOT NULL,
+        LastName NVARCHAR(100) NOT NULL,
+		Odd BIT
+		-- Specialization NVARCHAR(100),
+		-- Occupied 
+		-- Rating FLOAT
+    )
+END
+GO
+
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Specialization' )
+BEGIN
+    CREATE TABLE Specialization
+    (
+		Id INT PRIMARY KEY IDENTITY(1,1),
+        [Name] NVARCHAR(100)
+    )
+END
+GO
+
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Employee_Specialization' )
+BEGIN
+    CREATE TABLE Employee_Specialization
+    (
+		Id INT PRIMARY KEY IDENTITY(1,1),
+        EmployeeId INT FOREIGN KEY REFERENCES dbo.Employee(Id),
+		SpecializationId INT FOREIGN KEY REFERENCES dbo.Specialization(Id)
+    )
+END
+GO
+
+
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Service' )
+BEGIN
+    CREATE TABLE [Service]
+    (
+		Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+		Offer NVARCHAR(100),
+        SpecializationId INT FOREIGN KEY REFERENCES dbo.Employee_Specialization(Id),
+		Price DECIMAL,
+		[Time] TIME
+    )
+END
+GO
+
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Customer' )
+BEGIN
+    CREATE TABLE Customer
+    (
+		Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+		Phone NVARCHAR(20),
+		[Name] NVARCHAR(100),
+    )
+END
+GO
+
+
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Reservation' )
+BEGIN
+    CREATE TABLE Reservation
+    (
+		Id INT PRIMARY KEY IDENTITY(1,1),
+		EmployeeId INT FOREIGN KEY REFERENCES dbo.Employee(Id),
+        PersonId INT FOREIGN KEY REFERENCES dbo.Customer(Id),
+		[Start] DATETIME,
+		[End] DATETIME,
+    )
+END
+GO
+
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ReservationService' )
+BEGIN
+	CREATE TABLE ReservationService (
+		Id INT PRIMARY KEY IDENTITY(1,1),
+		ReservationId INT FOREIGN KEY REFERENCES Reservation(Id),
+		ServiceId INT FOREIGN KEY REFERENCES Service(Id)
+	)
+END
+GO
+
+/*
+DROP TABLE ReservationService;
+DROP TABLE Reservation;
+DROP TABLE Customer;
+DROP TABLE Service;
+DROP TABLE Employee_Specialization;
+DROP TABLE Specialization;
+DROP TABLE Employee;
+GO
+*/
