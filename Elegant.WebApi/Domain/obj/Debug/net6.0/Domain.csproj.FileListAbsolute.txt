@@ -1,0 +1,15 @@
+E:\Work\Azure Devops\Elegant\Elegant.WebApi\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+E:\Work\Azure Devops\Elegant\Elegant.WebApi\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Work\Azure Devops\Elegant\Elegant.WebApi\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+E:\Work\Azure Devops\Elegant\Elegant.WebApi\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+E:\Work\Azure Devops\Elegant\Elegant.WebApi\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+E:\Work\Azure Devops\Elegant\Elegant.WebApi\Domain\bin\Debug\net6.0\Domain.deps.json
+E:\Work\Azure Devops\Elegant\Elegant.WebApi\Domain\bin\Debug\net6.0\Domain.dll
+E:\Work\Azure Devops\Elegant\Elegant.WebApi\Domain\bin\Debug\net6.0\ref\Domain.dll
+E:\Work\Azure Devops\Elegant\Elegant.WebApi\Domain\bin\Debug\net6.0\Domain.pdb
+E:\Work\Azure Devops\Elegant\Elegant.WebApi\Domain\bin\Debug\net6.0\Data.dll
+E:\Work\Azure Devops\Elegant\Elegant.WebApi\Domain\bin\Debug\net6.0\Data.pdb
+E:\Work\Azure Devops\Elegant\Elegant.WebApi\Domain\obj\Debug\net6.0\Domain.csproj.CopyComplete
+E:\Work\Azure Devops\Elegant\Elegant.WebApi\Domain\obj\Debug\net6.0\Domain.dll
+E:\Work\Azure Devops\Elegant\Elegant.WebApi\Domain\obj\Debug\net6.0\ref\Domain.dll
+E:\Work\Azure Devops\Elegant\Elegant.WebApi\Domain\obj\Debug\net6.0\Domain.pdb

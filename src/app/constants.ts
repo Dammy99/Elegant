@@ -10,47 +10,51 @@ interface CirclesArray {
   data: Circles[];
 }
 
+interface ServicesList {
+  data: { service: string; link: string };
+}
+
 export const circlesData: CirclesArray = {
   data: [
     {
       navigation: "/price/hairdressingService?current=Стрижки",
-      src: "../../../public/haircutting.png",
+      src: "../../../public/11.png",
       alt: "Стрижки",
     },
     {
       navigation: "/price/hairdressingService?current=Фарбування",
-      src: "../../../public/haircutting.png",
+      src: "../../../public/1_dyeing_icon.png",
       alt: "Фарбування",
     },
     {
       navigation: "/price/hairdressingService?current=Стрижки",
-      src: "../../../public/haircutting.png",
-      alt: "Haircutting",
+      src: "../../../public/1_vidnovlennya_icon.png",
+      alt: "Відновлення волосся",
     },
     {
       navigation: "/price/hairdressingService?current=Стрижки",
-      src: "../../../public/haircutting.png",
-      alt: "Haircutting",
+      src: "../../../public/1_keratin_icon.png",
+      alt: "Кератинове вирівнювання",
     },
     {
       navigation: "/price/hairdressingService?current=Стрижки",
-      src: "../../../public/haircutting.png",
-      alt: "Haircutting",
+      src: "../../../public/1_manicure_icon.png",
+      alt: "Манікюр",
     },
     {
       navigation: "/price/hairdressingService?current=Стрижки",
-      src: "../../../public/haircutting.png",
-      alt: "Haircutting",
+      src: "../../../public/1_eyebrows_icon.png",
+      alt: "Брови та вії",
     },
     {
       navigation: "/price/hairdressingService?current=Стрижки",
-      src: "../../../public/haircutting.png",
-      alt: "Haircutting",
+      src: "../../../public/1_hairdo_icon.png",
+      alt: "Зачіски",
     },
     {
       navigation: "/price/hairdressingService?current=Стрижки",
-      src: "../../../public/haircutting.png",
-      alt: "Haircutting",
+      src: "../../../public/1_dohlyad_za_volossyam.png",
+      alt: "Догляд за волоссям",
     },
   ],
 };

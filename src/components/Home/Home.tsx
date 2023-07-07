@@ -116,7 +116,7 @@ const Home = () => {
           <section className={styles.pictures}>
             {circlesData.data.map((circle) => {
               return (
-                <div className={styles.field}>
+                <div key={circle.alt} className={styles.field}>
                   <NavLink to={circle.navigation}>
                     <div className={styles.circles}>
                       <img src={circle.src} alt={circle.alt} />
