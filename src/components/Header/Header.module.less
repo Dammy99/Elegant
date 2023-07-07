@@ -16,6 +16,10 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      a {
+        color: rgb(124, 124, 124);
+        text-decoration: none;
+      }
       .numbers {
         font-size: 17px;
         display: flex;
@@ -53,8 +57,8 @@
       justify-content: center;
       gap: 10px;
       ul {
+        height: 100%;
         margin: 0;
-
         align-self: center;
         list-style-type: none;
         text-decoration: none;
@@ -67,6 +71,9 @@
           }
         }
         li {
+          height: 100%;
+          display: inherit;
+          align-items: center;
           text-decoration: none;
           font-weight: 400;
           font-size: 1.1rem;
@@ -103,6 +110,9 @@
             &:hover:before {
               width: 100%;
             }
+          }
+          button {
+            transition: 0.5 ease;
           }
         }
       }
@@ -157,6 +167,24 @@
       transition: 0.4s ease;
 
       .navigation {
+        html::-webkit-scrollbar {
+          width: 10px;
+          background: #aaa;
+        }
+
+        html::-webkit-scrollbar-thumb {
+          background-color: #aaa;
+          border-radius: 4px;
+        }
+
+        html::-webkit-scrollbar-thumb:hover {
+          background-color: #888;
+        }
+
+        html::-webkit-scrollbar-track {
+          background-color: #252525;
+        }
+
         padding-top: 55px;
         right: 0;
         background: @light-gray;
@@ -165,13 +193,22 @@
         top: 0;
         z-index: 5;
         position: absolute;
+        overflow: auto;
         transition: all 0.4s ease;
         transform: translateX(0%);
-        > div > ul > li > a {
-          color: black;
-          text-decoration: none;
-          font-size: 1.1rem;
-          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        > div > ul > li {
+          a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+          }
+          > div {
+            // height: 0;
+            a {
+              // display: none;
+            }
+          }
         }
 
         > div > ul {
@@ -253,11 +290,19 @@
         width: 60%;
         transition: all 0.4s ease;
         .navlinks {
-          flex-direction: column;
+          overflow-y: scroll;
+          // flex-direction: column;
           ul {
             li {
+              .location {
+                font-size: 16px;
+                color: #888;
+              }
               a:hover {
                 color: rgb(99, 202, 185);
+              }
+              .numbers {
+                height: 260px;
               }
             }
           }

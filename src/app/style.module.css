@@ -15,6 +15,10 @@
   flex-direction: column;
   justify-content: center;
 }
+.container .contacts .leftside a {
+  color: #7c7c7c;
+  text-decoration: none;
+}
 .container .contacts .leftside .numbers {
   font-size: 17px;
   display: flex;
@@ -52,6 +56,7 @@
   gap: 10px;
 }
 .container .menu .links ul {
+  height: 100%;
   margin: 0;
   align-self: center;
   list-style-type: none;
@@ -64,6 +69,9 @@
   border-bottom: 0.2rem solid var(--secondary-color);
 }
 .container .menu .links ul li {
+  height: 100%;
+  display: inherit;
+  align-items: center;
   text-decoration: none;
   font-weight: 400;
   font-size: 1.1rem;
@@ -101,6 +109,9 @@
 .container .menu .links ul li a:hover:after,
 .container .menu .links ul li a:hover:before {
   width: 100%;
+}
+.container .menu .links ul li button {
+  transition: 0.5 ease;
 }
 .container .burger {
   display: none;
@@ -150,10 +161,25 @@
     top: 0;
     z-index: 5;
     position: absolute;
+    overflow: auto;
     transition: all 0.4s ease;
     transform: translateX(0%);
   }
-  .container .burger .navigation > div > ul > li > a {
+  .container .burger .navigation html::-webkit-scrollbar {
+    width: 10px;
+    background: #aaa;
+  }
+  .container .burger .navigation html::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 4px;
+  }
+  .container .burger .navigation html::-webkit-scrollbar-thumb:hover {
+    background-color: #888;
+  }
+  .container .burger .navigation html::-webkit-scrollbar-track {
+    background-color: #252525;
+  }
+  .container .burger .navigation > div > ul > li a {
     color: black;
     text-decoration: none;
     font-size: 1.1rem;
@@ -226,10 +252,17 @@
     transition: all 0.4s ease;
   }
   .container .burger .active .navlinks {
-    flex-direction: column;
+    overflow-y: scroll;
+  }
+  .container .burger .active .navlinks ul li .location {
+    font-size: 16px;
+    color: #888;
   }
   .container .burger .active .navlinks ul li a:hover {
     color: #63cab9;
+  }
+  .container .burger .active .navlinks ul li .numbers {
+    height: 260px;
   }
   @keyframes fadein {
     from {
@@ -720,6 +753,53 @@
   }
   .pricePage .price {
     padding: 50px 5px 50px 5px;
+  }
+}
+.dropdown {
+  border-radius: 5%;
+  background-color: #f6f7f8 !important;
+  display: flex;
+  align-items: start;
+  padding-left: 20px;
+  flex-direction: column;
+  width: 230px;
+  height: 300px;
+  background-color: white;
+  font-family: "Alegreya SC";
+  box-shadow: 12px 12px 2px 1px rgba(174, 174, 187, 0.2);
+  position: relative;
+  position: absolute;
+  z-index: 1;
+  top: 43px;
+  transition: 0.5s ease;
+  font-size: 16px;
+  justify-content: start;
+}
+.dropdown a {
+  color: #5f5f5f !important;
+  width: 100%;
+}
+.dropdown a:hover p {
+  color: #68a193;
+}
+.dropdown a p {
+  width: fit-content;
+  margin: 14px 0 0 0;
+}
+.dropdown a::before,
+.dropdown a::after {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .dropdown {
+    background-color: inherit !important;
+    overflow: hidden;
+    position: inherit;
+    box-shadow: none;
+    top: 0;
+  }
+  .dropdown a p {
+    font-family: "Alegreya SC";
   }
 }
 @font-face {
