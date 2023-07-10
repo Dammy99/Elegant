@@ -1,7 +1,4 @@
-import React from "react";
 import styles from "../../app/style.module.css";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import { IconButton } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
 import TtyIcon from "@mui/icons-material/Tty";
 import TimelapseIcon from "@mui/icons-material/Timelapse";

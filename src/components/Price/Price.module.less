@@ -2,19 +2,10 @@
 @middle-green: #68a193;
 @middle-gray: #7e7878;
 @body-gray: #9c9c9c52;
+@body-gray-rgba: rgba(156, 156, 156, 0.2);
 .pricePage {
-  .background {
-    background-image: url(../../../background_hair.png);
-    background-size: cover;
-    filter: blur(10px);
-    position: absolute;
-    height: 100%;
-    width: -webkit-fill-available;
-    max-height: 100vh;
-    z-index: -1;
-    padding: 50px;
-    opacity: 0.5;
-  }
+  background-image: url(../../../public/background_hair_new_3.png);
+  background-size: cover;
   .price {
     padding: 50px 100px 50px 100px;
     .list {
@@ -39,12 +30,30 @@
     .tables {
       padding-bottom: 50px;
       background-color: white;
+      .alarm {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        font-family: "Kurale";
+        font-weight: 700;
+        div {
+          width: 95%;
+          background-color: @body-gray-rgba;
+          display: flex;
+          justify-content: center;
+          p {
+            width: 80%;
+            font-family: "Alegreya SC";
+          }
+        }
+      }
     }
   }
 }
 
 @media screen and (max-width: 1024px) {
   .pricePage {
+    background-image: none;
     .background {
       display: none;
     }
@@ -67,6 +76,11 @@
     }
     .price {
       padding: 50px 5px 50px 5px;
+      .list {
+        .slash {
+          display: none;
+        }
+      }
     }
   }
 }

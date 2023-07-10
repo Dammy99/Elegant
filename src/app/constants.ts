@@ -1,4 +1,4 @@
-import { ServicesData, TableData } from "../components/Table/Table";
+import { TableData } from "../components/Table/Table";
 
 interface Circles {
   navigation: string;
@@ -10,129 +10,190 @@ interface CirclesArray {
   data: Circles[];
 }
 
-interface ServicesList {
-  data: { service: string; link: string };
-}
-
 export const circlesData: CirclesArray = {
   data: [
     {
       navigation: "/price/hairdressingService?current=Стрижки",
-      src: "../../../public/11.png",
+      src: "../../../public/image_icon_1.1.1.png",
       alt: "Стрижки",
     },
     {
       navigation: "/price/hairdressingService?current=Фарбування",
-      src: "../../../public/1_dyeing_icon.png",
+      src: "../../../public/image_icon_2.png",
       alt: "Фарбування",
     },
     {
-      navigation: "/price/hairdressingService?current=Стрижки",
-      src: "../../../public/1_vidnovlennya_icon.png",
+      navigation: "/price/hairdressingService?current=Відновлення волосся",
+      src: "../../../public/image_icon_3.png",
       alt: "Відновлення волосся",
     },
     {
-      navigation: "/price/hairdressingService?current=Стрижки",
-      src: "../../../public/1_keratin_icon.png",
+      navigation:
+        "/price/hairdressingService?current=Кератинове вирівнювання для",
+      src: "../../../public/image_icon_4.png",
       alt: "Кератинове вирівнювання",
     },
     {
-      navigation: "/price/hairdressingService?current=Стрижки",
-      src: "../../../public/1_manicure_icon.png",
-      alt: "Манікюр",
+      navigation: "/price/manicureService?current=Манікюр",
+      src: "../../../public/image_icon_5.png",
+      alt: "Манікюр та педикюр",
     },
     {
-      navigation: "/price/hairdressingService?current=Стрижки",
-      src: "../../../public/1_eyebrows_icon.png",
+      navigation: "/price/eyebrows&eyelashes?current=Брови та вії",
+      src: "../../../public/image_icon_6.png",
       alt: "Брови та вії",
     },
     {
-      navigation: "/price/hairdressingService?current=Стрижки",
-      src: "../../../public/1_hairdo_icon.png",
+      navigation: "/price/hairdressingService?current=Укладка/зачіска",
+      src: "../../../public/image_icon_7.png",
       alt: "Зачіски",
     },
     {
       navigation: "/price/hairdressingService?current=Стрижки",
-      src: "../../../public/1_dohlyad_za_volossyam.png",
+      src: "../../../public/image_icon_8.png",
       alt: "Догляд за волоссям",
     },
   ],
 };
 
-const parsedServices: ServicesData[] = [
-  { name: "Service 1", price: "100" },
-  { name: "Service 2", price: "200" },
-  { name: "Service 3", price: "300" },
-];
-
 export const hairdressingServices: TableData[] = [
   {
-    bigTable: true,
     tableName: "Стрижки",
     data: [
-      {
-        name: "Стрижка жіноча (з сушкою)",
-        price: "250",
-        secondPrice: "300-400",
-        thirdPrice: "400-500",
-      },
-      { name: "Стрижка чоловіча", price: "200 - 270" },
-      { name: "Стрижка дитяча", price: "250 - 500" },
+      { name: "Стрижка жіноча", price: "250 - 500" },
+      { name: "Стрижка жіноча + миття голови", price: "350 - 650" },
+      { name: "Стрижка чоловіча", price: "200 - 250" },
+      { name: "Стрижка чоловіча + миття голови", price: "250 - 300" },
+      { name: "Стрижка дитяча", price: "250" },
       { name: "Стрижка кінчиків", price: "200" },
       { name: "Стрижка гривки", price: "100" },
-      { name: "Стрижка бороди від довжини", price: "150 - 200" },
-      { name: "Стрижка вус", price: "70" },
+      { name: "Стрижка бороди", price: "150 - 200" },
+      { name: "Полірування", price: "400 - 600" },
     ],
   },
   {
-    data: [
-      { name: "Прикореневе (робота + миття + сушка)", price: "400 - 500" },
-      { name: "По всій довжині (робота + миття + сушка)", price: "400 - 700" },
-    ],
     tableName: "Фарбування",
+    bigTable: true,
+    data: [
+      {
+        name: "Прикореневе",
+        price: "",
+        secondPrice: "400",
+        thirdPrice: "500",
+      },
+      {
+        name: "По всій довжина",
+        price: "400",
+        secondPrice: "500",
+        thirdPrice: "700",
+      },
+      {
+        name: "Міліровка",
+        price: "від 500",
+        secondPrice: "від 700",
+        thirdPrice: "від 1000",
+      },
+      {
+        name: "Колорування",
+        price: "від 700",
+        secondPrice: "від 1000",
+        thirdPrice: "від 1500",
+      },
+      {
+        name: "Міліровка + Тонування",
+        price: "від 800",
+        secondPrice: "від 1000",
+        thirdPrice: "від 1500",
+      },
+      {
+        name: "AirTouch/Шатуш/Балаяж",
+        price: "від 900",
+        secondPrice: "від 1200",
+        thirdPrice: "від 2000",
+      },
+    ],
+  },
+  {
+    tableName: "Відновлення волосся",
+    bigTable: true,
+    data: [
+      {
+        name: "Реконструкція волосся",
+        price: "від 400",
+        secondPrice: "від 500",
+        thirdPrice: "від 600",
+      },
+      {
+        name: "Відновлення від Raywell",
+        price: "від 500",
+        secondPrice: "від 600",
+        thirdPrice: "від 700",
+      },
+    ],
+  },
+  {
+    tableName: "Кератинове вирівнювання для",
+    data: [
+      { name: "Чолки", price: "від 300" },
+      { name: "Короткого волосся", price: "від 1500" },
+      { name: "Середнього волосся", price: "від 2000" },
+      { name: "Довгого волосся", price: "від 2500" },
+    ],
+  },
+  {
+    tableName: "Укладка/зачіска",
+    data: [
+      { name: "Укладка", price: "250 - 500 " },
+      { name: "Укладка + миття голови", price: "300 - 700 " },
+      { name: "Накрутка ", price: "400 - 800 " },
+      { name: "Зачіска", price: "від 1000" },
+      { name: "Весільна зачіска", price: "від 1800" },
+    ],
   },
 ];
 
 export const manicureService: TableData[] = [
   {
-    tableName: "Манік",
+    tableName: "Манікюр",
     data: [
-      { name: "Стрижка жіноча (з сушкою)", price: "250 - 500" },
-      { name: "Стрижка чоловіча", price: "200 - 270" },
-      { name: "Стрижка дитяча", price: "250 - 500" },
-      { name: "Стрижка кінчиків", price: "200" },
-      { name: "Стрижка гривки", price: "100" },
-      { name: "Стрижка бороди від довжини", price: "150 - 200" },
-      { name: "Стрижка вус", price: "70" },
+      { name: "Чистка", price: "200" },
+      { name: "Ремонт нігтя", price: "50" },
+      { name: "Покриття гель лаком (однотонне)", price: "300" },
+      { name: "Покриття “French”", price: "350" },
+      { name: "Покриття “градієнт”", price: "350" },
+      { name: "Чистка + покриття", price: "450" },
+      { name: "Чистка + “French”", price: "500" },
+      { name: "Чистка + “градієнт”", price: "500" },
+      { name: "Зняття гель лаку", price: "150" },
+      { name: "Зняття гель лаку + чистка ", price: "350" },
+      { name: "Зняття гель лаку + покриття", price: "400" },
+      { name: "Зняття + чистка + покриття кольором", price: "500" },
+      { name: "Зняття + чистка + “French”", price: "550" },
+      { name: "Зняття + чистка + “градієнт”", price: "550" },
+      { name: "Укріплення нігтів (гель, пудра)", price: "100" },
     ],
   },
   {
+    tableName: "Педикюр",
     data: [
-      { name: "Прикореневе (робота + миття + сушка)", price: "400 - 500" },
-      { name: "По всій довжині (робота + миття + сушка)", price: "400 - 700" },
+      { name: "Чистка нігтів + стопи", price: "400" },
+      { name: "Чистка нігтів + стопи + покриття г. л. ", price: "500" },
+      { name: "Зняття г. л. + чистка + покриття", price: "600" },
+      { name: "Зняття гель лаку", price: "150" },
     ],
-    tableName: "Фабік",
   },
 ];
 
 export const eyebrowsAndEyelashes: TableData[] = [
   {
-    tableName: "Брови",
+    tableName: "Брови та вії",
     data: [
-      { name: "Стрижка жіноча (з сушкою)", price: "250 - 500" },
-      { name: "Стрижка чоловіча", price: "200 - 270" },
-      { name: "Стрижка дитяча", price: "250 - 500" },
-      { name: "Стрижка кінчиків", price: "200" },
-      { name: "Стрижка гривки", price: "100" },
-      { name: "Стрижка бороди від довжини", price: "150 - 200" },
-      { name: "Стрижка вус", price: "70" },
+      { name: "Корекція брів", price: "100" },
+      { name: "Фарбування брів фарбою", price: "120 " },
+      { name: "Фарбування брів хною", price: "200" },
+      { name: "Фарбування брів фарбою + корекція", price: "200" },
+      { name: "Фарбування брів хною + корекція", price: "300" },
+      { name: "Фарбування вій", price: "100" },
     ],
-  },
-  {
-    data: [
-      { name: "Прикореневе (робота + миття + сушка)", price: "400 - 500" },
-      { name: "По всій довжині (робота + миття + сушка)", price: "400 - 700" },
-    ],
-    tableName: "Воки",
   },
 ];
