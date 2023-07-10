@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "../../app/style.module.css";
 import { NavLink } from "react-router-dom";
 import logo from "../../../public/LogoBackless.png";
@@ -17,7 +17,7 @@ const Header = () => {
   const [height, setHeight] = useState(0);
   const handleSetHeight = () => {
     if (height == 0) {
-      setHeight(300);
+      setHeight(270);
     } else {
       setHeight(0);
     }

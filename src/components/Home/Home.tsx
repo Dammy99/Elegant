@@ -1,5 +1,4 @@
-import React from "react";
-import computerFrame from "../../../public/ComputerFrame.png";
+import computerFrame from "../../../public/background_home_10.png";
 import styles from "../../app/style.module.css";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
@@ -26,7 +25,8 @@ export function GetLocation() {
     </Map>
   );
 }
-const handleDragStart = (e) => e.preventDefault();
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const handleDragStart = (e: any) => e.preventDefault();
 
 const responsive = {
   0: { items: 1 },
@@ -102,13 +102,29 @@ const Home = () => {
     <>
       <section className={styles.home}>
         <section className={styles.frame}>
+          <div className={styles.line}></div>
+          <div className={styles.area}>
+            <ul className={styles.square}>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
           <img className={styles.photo} src={computerFrame} alt="frame" />
 
           <p className={styles.centered}>Elegant</p>
-          <p className={styles.left}>
-            Бути красивою та доглянутою - мрія кожної жінки Головне - правильно
-            вибрати “Свою” перукарню
-          </p>
+          <div className={styles.left}>
+            <span>Краса не вимагає жертв, краса</span>
+            <span> потребує уваги.</span>
+            <p>Знайди час для себе</p>
+          </div>
         </section>
         <div></div>
         <section className={styles.services}>
@@ -141,6 +157,48 @@ const Home = () => {
               items={items}
             />
           </div>
+        </section>
+        <section className={styles.about}>
+          <span className={styles.bigtext}>-Про нас-</span>
+          <p className={styles.information}>
+            Elegant - салон краси у Львові, де Вам допоможуть вдосконалити та
+            підкреслити красу, подбати про волосся, нігті та мати неперевершений
+            вигляд.
+          </p>
+          <p className={styles.information}>
+            Кожна жінка приділяє увагу своєму зовнішньому вигляду: стрижка,
+            укладка, або фарбування, манікюр та педикюр. Правильний догляд за
+            волоссям чи нігтями неможливий в домашніх умовах і потребує
+            професійного підходу.
+          </p>
+          <p className={styles.information}>
+            Ми пропонуємо індивідуальний підхід до кожного клієнта у підборі
+            стрижки. Змінимо колір Вашого волосся у той про який Ви завжди
+            мріяли. Різноманітні процедури для відновлення волосся в тому числі
+            після хімічної завивки чи фарбування в блонд.
+            <span className={styles.information__computer}>
+              Ваше волосся стане блискучим та пружним, без посічених кінчиків.
+              Кожне пасмо буде захищене від ламкості, термічних і фізичних
+              впливів.
+            </span>
+            Наша команда допоможе підібрати Вам відповідний догляд, який буде
+            довго підтримувати отриманий результат.
+          </p>
+          <b className={styles.information}>
+            Саме тому наші спеціалісти докладуть максимум зусиль, щоб Ви були
+            задоволені ♥
+          </b>
+          <h3>Безпека</h3>
+          <p className={styles.information}>
+            100% гарантія стерилізації та дезінфекції
+          </p>
+          <h3>Досвід і професіоналізм</h3>
+          <p className={styles.information}>Працюємо з 2005 року</p>
+          <h3>Час</h3>
+          <p className={styles.information}>
+            Ми цінуємо Ваш час, тому є можливість зробити кілька процедур
+            одночасно
+          </p>
         </section>
         <section className={styles.map}>
           <span className={styles.bigtext}>-Наша локація-</span>

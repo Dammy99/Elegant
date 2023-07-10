@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../../app/style.module.css";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { IconButton } from "@mui/material";
@@ -31,7 +30,7 @@ const Footer = () => {
         <div className={styles.social}></div>
       </section>
       <section>
-        <p>© “Elegant” | 2005 | Всі права захищено. </p>
+        <p>© “Elegant” | 2023 | Всі права захищено. </p>
       </section>
     </div>
   );
