@@ -16,11 +16,10 @@ const parsedServices: ServicesData[] = [
 
 const p: TableData = { data: parsedServices, tableName: "qwe" };
 
-const Price = (data: TableData[]) => {
+const Price = () => {
   const { pricesPage } = useParams();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  console.log(searchParams.get("current"));
   const activeItem = searchParams.get("current");
   useEffect(() => {
     if (activeItem) {
@@ -34,7 +33,6 @@ const Price = (data: TableData[]) => {
 
   return (
     <div className={styles.pricePage}>
-      <section className={styles.background}></section>
       <section className={styles.price}>
         <section className={styles.list}>
           <NavLink
@@ -43,11 +41,11 @@ const Price = (data: TableData[]) => {
           >
             Перукарські послуги
           </NavLink>
-          <span>|</span>
+          <span className={styles.slash}>|</span>
           <NavLink to="/price/manicureService" data-link-alt="Послуги манікюру">
             Послуги манікюру
           </NavLink>
-          <span>|</span>
+          <span className={styles.slash}>|</span>
           <NavLink to="/price/eyebrows&eyelashes" data-link-alt="Брови та вії">
             Брови та вії
           </NavLink>
@@ -57,6 +55,17 @@ const Price = (data: TableData[]) => {
             hairdressingServices.map((x: TableData) => {
               return <Table key={x.tableName} {...x}></Table>;
             })}
+          {pricesPage == "hairdressingService" && (
+            <div className={styles.alarm}>
+              <div>
+                <p>
+                  ЦІНИ ВКАЗАНІ БЕЗ УРАХУВАННЯ МАТЕРІАЛІВ ТА ЗАЛЕЖАТЬ ВІД ДОВЖИНИ
+                  І ГУСТИНИ ВОЛОССЯ, ТОМУ ОСТАТОЧНА ЦІНА ВИЗНАЧАЄТЬСЯ ПЕРЕД
+                  ПРОЦЕДУРОЮ.
+                </p>
+              </div>
+            </div>
+          )}
           {pricesPage == "manicureService" &&
             manicureService.map((x: TableData) => {
               return <Table key={x.tableName} {...x}></Table>;
@@ -65,7 +74,6 @@ const Price = (data: TableData[]) => {
             eyebrowsAndEyelashes.map((x: TableData) => {
               return <Table key={x.tableName} {...x}></Table>;
             })}
-          {/* <Table {...p}></Table> */}
         </section>
       </section>
     </div>

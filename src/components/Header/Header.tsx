@@ -17,7 +17,7 @@ const Header = () => {
   const [height, setHeight] = useState(0);
   const handleSetHeight = () => {
     if (height == 0) {
-      setHeight(300);
+      setHeight(270);
     } else {
       setHeight(0);
     }
