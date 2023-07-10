@@ -1,5 +1,5 @@
 import { TableData } from "../components/Table/Table";
-
+import image_icon_1 from "../../public/image_icon_1.1.1.png";
 interface Circles {
   navigation: string;
   src: string;
@@ -14,7 +14,7 @@ export const circlesData: CirclesArray = {
   data: [
     {
       navigation: "/price/hairdressingService?current=Стрижки",
-      src: "../../../public/image_icon_1.1.1.png",
+      src: image_icon_1,
       alt: "Стрижки",
     },
     {
