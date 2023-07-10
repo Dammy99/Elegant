@@ -24,9 +24,6 @@ function App() {
     <>
       <Header />
       <Routes>
-        {/* <Route path="/" element={<Outlet />}>
-          <Route index element={<Header />}></Route>
-        </Route> */}
         <Route path="/" element={<Home />}></Route>
         <Route path="/services" element={<Services />}></Route>
         <Route path="/contacts" element={<Contacts />}></Route>

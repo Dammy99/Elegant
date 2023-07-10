@@ -13,20 +13,22 @@ const Dropdown = (props: Props) => {
   return (
     <section className={styles.dropdown} style={{ height: props.heigth1 }}>
       {circlesData.data.map((service) => {
-        return (
-          <NavLink
-            key={service.alt}
-            onClick={() => {
-              props.setState;
-              if (props.closeBurger) {
-                props.closeBurger();
-              }
-            }}
-            to={service.navigation}
-          >
-            <p>{service.alt}</p>
-          </NavLink>
-        );
+        if (service.alt != "Догляд за волоссям") {
+          return (
+            <NavLink
+              key={service.alt}
+              onClick={() => {
+                props.setState;
+                if (props.closeBurger) {
+                  props.closeBurger();
+                }
+              }}
+              to={service.navigation}
+            >
+              <p>{service.alt}</p>
+            </NavLink>
+          );
+        }
       })}
     </section>
   );

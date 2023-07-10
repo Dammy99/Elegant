@@ -31,7 +31,7 @@ const Footer = () => {
         <div className={styles.social}></div>
       </section>
       <section>
-        <p>© “Elegant” | 2005 | Всі права захищено. </p>
+        <p>© “Elegant” | 2023 | Всі права захищено. </p>
       </section>
     </div>
   );
