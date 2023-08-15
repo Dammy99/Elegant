@@ -27,6 +27,14 @@ export function GetLocation() {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const handleDragStart = (e: any) => e.preventDefault();
 
+const partners = [
+  <img src="../../company_shot1.jpg" />,
+  <img src="../../company_kezy1.png" />,
+  <img src="../../company_farmavita.png" />,
+  <img src="../../company_yellow.png" />,
+  <img src="../../company_raywell.jpg" />,
+];
+
 const responsive = {
   0: { items: 1 },
   550: { items: 4 },
@@ -202,6 +210,14 @@ const Home = () => {
             Ми цінуємо Ваш час, тому є можливість зробити кілька процедур
             одночасно
           </p>
+        </section>
+        <section className={styles.working}>
+          <span className={styles.bigtext}>-Ми співпрацюємо-</span>
+          <div className={styles.companies}>
+            {partners.map((photo) => {
+              return photo;
+            })}
+          </div>
         </section>
         <section className={styles.map}>
           <span className={styles.bigtext}>-Наша локація-</span>

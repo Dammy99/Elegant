@@ -306,6 +306,25 @@
     padding-bottom: 50px;
     border-bottom: 1px solid black;
   }
+  .working {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    // padding: 50px;
+    margin: 50px;
+    img {
+      height: 200px;
+      width: 200px;
+      object-fit: contain;
+      // position: ;
+    }
+    .bigtext {
+      font-size: 40px;
+      color: black;
+    }
+    padding-bottom: 50px;
+    border-bottom: 1px solid black;
+  }
   .map {
     margin-top: 50px;
     .bigtext {
@@ -433,6 +452,91 @@
     .services {
       .pictures {
         grid-template-columns: 100%;
+      }
+    }
+    .working {
+      position: relative;
+      height: 595px;
+      img {
+        position: absolute;
+      }
+      img:nth-child(1) {
+        top: 60px;
+        left: 7vw;
+        z-index: -3;
+      }
+      img:nth-child(2) {
+        top: 185px;
+        left: 34vw;
+        z-index: -2;
+      }
+      img:nth-child(3) {
+        top: 268px;
+        left: 7vw;
+        z-index: 0;
+      }
+      img:nth-child(4) {
+        top: 334px;
+        left: 34vw;
+        z-index: -1;
+      }
+      img:nth-child(5) {
+        top: 420px;
+        left: 7vw;
+        z-index: 1;
+      }
+    }
+  }
+}
+@media screen and (max-width: 445px) {
+  .home {
+    .working {
+      img {
+        position: absolute;
+      }
+      img:nth-child(1) {
+        top: 90px;
+        left: 5vw;
+      }
+      img:nth-child(2) {
+        top: 215px;
+        left: 30vw;
+      }
+      img:nth-child(3) {
+        top: 298px;
+        left: 5vw;
+      }
+      img:nth-child(4) {
+        top: 364px;
+        left: 30vw;
+      }
+      img:nth-child(5) {
+        top: 450px;
+        left: 5vw;
+      }
+    }
+  }
+}
+@media screen and (max-width: 374px) {
+  .home {
+    .working {
+      img {
+        position: absolute;
+      }
+      img:nth-child(1) {
+        left: 0;
+      }
+      img:nth-child(2) {
+        left: 22vw;
+      }
+      img:nth-child(3) {
+        left: 0;
+      }
+      img:nth-child(4) {
+        left: 22vw;
+      }
+      img:nth-child(5) {
+        left: 0;
       }
     }
   }
