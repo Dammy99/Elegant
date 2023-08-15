@@ -588,6 +588,23 @@
   color: black;
   font-family: "Alegreya SC";
 }
+.home .working {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid black;
+}
+.home .working img {
+  height: 200px;
+  width: 200px;
+  object-fit: contain;
+}
+.home .working .bigtext {
+  font-size: 40px;
+  color: black;
+}
 .home .map {
   margin-top: 50px;
 }
@@ -685,6 +702,83 @@
   }
   .home .services .pictures {
     grid-template-columns: 100%;
+  }
+  .home .working {
+    position: relative;
+    height: 595px;
+  }
+  .home .working img {
+    position: absolute;
+  }
+  .home .working img:nth-child(1) {
+    top: 60px;
+    left: 7vw;
+    z-index: -3;
+  }
+  .home .working img:nth-child(2) {
+    top: 185px;
+    left: 34vw;
+    z-index: -2;
+  }
+  .home .working img:nth-child(3) {
+    top: 268px;
+    left: 7vw;
+    z-index: 0;
+  }
+  .home .working img:nth-child(4) {
+    top: 334px;
+    left: 34vw;
+    z-index: -1;
+  }
+  .home .working img:nth-child(5) {
+    top: 420px;
+    left: 7vw;
+    z-index: 1;
+  }
+}
+@media screen and (max-width: 445px) {
+  .home .working img {
+    position: absolute;
+  }
+  .home .working img:nth-child(1) {
+    top: 90px;
+    left: 5vw;
+  }
+  .home .working img:nth-child(2) {
+    top: 215px;
+    left: 30vw;
+  }
+  .home .working img:nth-child(3) {
+    top: 298px;
+    left: 5vw;
+  }
+  .home .working img:nth-child(4) {
+    top: 364px;
+    left: 30vw;
+  }
+  .home .working img:nth-child(5) {
+    top: 450px;
+    left: 5vw;
+  }
+}
+@media screen and (max-width: 374px) {
+  .home .working img {
+    position: absolute;
+  }
+  .home .working img:nth-child(1) {
+    left: 0;
+  }
+  .home .working img:nth-child(2) {
+    left: 22vw;
+  }
+  .home .working img:nth-child(3) {
+    left: 0;
+  }
+  .home .working img:nth-child(4) {
+    left: 22vw;
+  }
+  .home .working img:nth-child(5) {
+    left: 0;
   }
 }
 .footer {
