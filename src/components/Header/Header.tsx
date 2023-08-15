@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "../../app/style.module.css";
 import { NavLink } from "react-router-dom";
-import logo from "../../../public/LogoBackless.png";
+import logo from "/LogoBackless.png";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import TimelapseIcon from "@mui/icons-material/Timelapse";

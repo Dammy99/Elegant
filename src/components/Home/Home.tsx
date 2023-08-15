@@ -1,4 +1,3 @@
-import computerFrame from "../../../public/background_home_10.png";
 import styles from "../../app/style.module.css";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
@@ -35,62 +34,62 @@ const responsive = {
 };
 const items = [
   <img
-    src="../../public/carousel_1.jpg"
+    src="../../carousel_1.jpg"
     onDragStart={handleDragStart}
     role="presentation"
   />,
   <img
-    src="../../public/carousel_2.jpg"
+    src="../../carousel_2.jpg"
     onDragStart={handleDragStart}
     role="presentation"
   />,
   <img
-    src="../../public/carousel_3.jpg"
+    src="../../carousel_3.jpg"
     onDragStart={handleDragStart}
     role="presentation"
   />,
   <img
-    src="../../public/carousel_4.jpg"
+    src="../../carousel_4.jpg"
     onDragStart={handleDragStart}
     role="presentation"
   />,
   <img
-    src="../../public/carousel_5.jpg"
+    src="../../carousel_5.jpg"
     onDragStart={handleDragStart}
     role="presentation"
   />,
   <img
-    src="../../public/carousel_6.jpg"
+    src="../../carousel_6.jpg"
     onDragStart={handleDragStart}
     role="presentation"
   />,
   <img
-    src="../../public/carousel_7.jpg"
+    src="../../carousel_7.jpg"
     onDragStart={handleDragStart}
     role="presentation"
   />,
   <img
-    src="../../public/carousel_8.jpg"
+    src="../../carousel_8.jpg"
     onDragStart={handleDragStart}
     role="presentation"
   />,
   <img
-    src="../../public/carousel_9.jpg"
+    src="../../carousel_9.jpg"
     onDragStart={handleDragStart}
     role="presentation"
   />,
   <img
-    src="../../public/carousel_10.jpg"
+    src="../../carousel_10.jpg"
     onDragStart={handleDragStart}
     role="presentation"
   />,
   <img
-    src="../../public/carousel_11.jpg"
+    src="../../carousel_11.jpg"
     onDragStart={handleDragStart}
     role="presentation"
   />,
   <img
-    src="../../public/carousel_12.jpg"
+    src="../../carousel_12.jpg"
     onDragStart={handleDragStart}
     role="presentation"
   />,
@@ -117,7 +116,11 @@ const Home = () => {
               <li></li>
             </ul>
           </div>
-          <img className={styles.photo} src={computerFrame} alt="frame" />
+          <img
+            className={styles.photo}
+            src={"/background_home_10.png"}
+            alt="frame"
+          />
 
           <p className={styles.centered}>Elegant</p>
           <div className={styles.left}>

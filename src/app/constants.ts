@@ -1,5 +1,4 @@
 import { TableData } from "../components/Table/Table";
-import image_icon_1 from "../../public/image_icon_1.1.1.png";
 interface Circles {
   navigation: string;
   src: string;
@@ -14,43 +13,43 @@ export const circlesData: CirclesArray = {
   data: [
     {
       navigation: "/price/hairdressingService?current=Стрижки",
-      src: image_icon_1,
+      src: "/image_icon_1.1.1.png",
       alt: "Стрижки",
     },
     {
       navigation: "/price/hairdressingService?current=Фарбування",
-      src: "../../public/image_icon_2.png",
+      src: "/image_icon_2.png",
       alt: "Фарбування",
     },
     {
       navigation: "/price/hairdressingService?current=Відновлення волосся",
-      src: "../../public/image_icon_3.png",
+      src: "/image_icon_3.png",
       alt: "Відновлення волосся",
     },
     {
       navigation:
         "/price/hairdressingService?current=Кератинове вирівнювання для",
-      src: "../../public/image_icon_4.png",
+      src: "/image_icon_4.png",
       alt: "Кератинове вирівнювання",
     },
     {
       navigation: "/price/manicureService?current=Манікюр",
-      src: "../../public/image_icon_5.png",
+      src: "/image_icon_5.png",
       alt: "Манікюр та педикюр",
     },
     {
       navigation: "/price/eyebrows&eyelashes?current=Брови та вії",
-      src: "../../public/image_icon_6.png",
+      src: "/image_icon_6.png",
       alt: "Брови та вії",
     },
     {
       navigation: "/price/hairdressingService?current=Укладка/зачіска",
-      src: "../../public/image_icon_7.png",
+      src: "/image_icon_7.png",
       alt: "Зачіски",
     },
     {
       navigation: "/price/hairdressingService?current=Стрижки",
-      src: "../../public/image_icon_8.png",
+      src: "/image_icon_8.png",
       alt: "Догляд за волоссям",
     },
   ],
